@@ -1,0 +1,46 @@
+{
+    "name": "loophp/church-encoding",
+    "type": "library",
+    "description": "Church encoding in PHP",
+    "keywords": [
+        "church-encoding",
+        "educational",
+        "functional-programming",
+        "learning"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pol Dellaiera",
+            "email": "pol.dellaiera@protonmail.com"
+        }
+    ],
+    "require": {
+        "php": ">= 7.4",
+        "loophp/combinator": "^2.0"
+    },
+    "require-dev": {
+        "drupol/php-conventions": "^2",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "infection/infection": "^0.18",
+        "infection/phpspec-adapter": "^0.1.1",
+        "phpspec/phpspec": "^5.1.2 || ^6.2.1",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "symfony/var-dumper": "^5.1",
+        "vimeo/psalm": "^3.18.2 || ^4"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "loophp\\churchencoding\\": "./src/"
+        }
+    },
+    "scripts": {
+        "bench": "vendor/bin/phpbench run --report='generator: \"table\", cols: [ \"suite\", \"subject\", \"mean\", \"diff\", \"mem_peak\", \"mem_real\"], break: [\"benchmark\"]'",
+        "grumphp": "vendor/bin/grumphp run",
+        "infection": "vendor/bin/infection run -j 2",
+        "phpspec": "vendor/bin/phpspec run"
+    }
+}
