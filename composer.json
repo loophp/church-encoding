@@ -1,0 +1,37 @@
+{
+    "name": "loophp/church-encoding",
+    "description": "Church encoding in PHP",
+    "type": "library",
+    "keywords": [
+        "church-encoding",
+        "educational",
+        "functional-programming",
+        "learning"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">= 7.4"
+    },
+    "require-dev": {
+        "drupol/php-conventions": "^1.7.4 || ^1.8.19 || ^2",
+        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2",
+        "infection/infection": "^0.13.6 || ^0.15.3",
+        "phpspec/phpspec": "^5.1.2 || ^6.2.1",
+        "phpstan/phpstan-strict-rules": "^0.12",
+        "vimeo/psalm": "^3.17.2"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "loophp\\churchencoding\\": "./src/"
+        }
+    },
+    "scripts": {
+        "bench": "vendor/bin/phpbench run --report='generator: \"table\", cols: [ \"suite\", \"subject\", \"mean\", \"diff\", \"mem_peak\", \"mem_real\"], break: [\"benchmark\"]'",
+        "grumphp": "vendor/bin/grumphp run",
+        "infection": "vendor/bin/infection run -j 2",
+        "phpspec": "vendor/bin/phpspec run"
+    }
+}
