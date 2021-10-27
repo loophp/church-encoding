@@ -20,14 +20,13 @@
         "loophp/combinator": "^2.0"
     },
     "require-dev": {
-        "drupol/php-conventions": "^2 || ^3",
-        "friends-of-phpspec/phpspec-code-coverage": "^4.3.2 || ^5.0.0",
-        "infection/infection": "^0.18 || ^0.20 || ^0.21",
+        "drupol/php-conventions": "^5",
+        "friends-of-phpspec/phpspec-code-coverage": "^6.1",
+        "infection/infection": "^0.24",
         "infection/phpspec-adapter": "^0.1.1",
-        "phpspec/phpspec": "^5.1.2 || ^6.2.1 || ^7.0.0",
+        "phpspec/phpspec": "^7",
         "phpstan/phpstan-strict-rules": "^0.12",
-        "symfony/var-dumper": "^5.1",
-        "vimeo/psalm": "^3.18.2 || ^4"
+        "symfony/var-dumper": "^5.1"
     },
     "config": {
         "sort-packages": true
