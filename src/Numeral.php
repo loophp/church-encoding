@@ -8,7 +8,7 @@ use Closure;
 use loophp\combinator\Combinators;
 
 /**
- * Class Boolean.
+ * Class Numeral.
  *
  * phpcs:disable Generic.Files.LineLength.TooLong
  */
@@ -16,7 +16,7 @@ final class Numeral
 {
     public static function eight(): Closure
     {
-        return self::plus()(self::one())(self::seven());
+        return self::succ()(self::seven());
     }
 
     public static function exponentiation(): Closure
@@ -26,12 +26,12 @@ final class Numeral
 
     public static function five(): Closure
     {
-        return self::plus()(self::one())(self::four());
+        return self::succ()(self::four());
     }
 
     public static function four(): Closure
     {
-        return self::plus()(self::one())(self::three());
+        return self::succ()(self::three());
     }
 
     public static function minus(): Closure
@@ -46,12 +46,12 @@ final class Numeral
 
     public static function nine(): Closure
     {
-        return self::plus()(self::one())(self::eight());
+        return self::succ()(self::eight());
     }
 
     public static function one(): Closure
     {
-        return Combinators::A();
+        return self::succ()(self::zero());
     }
 
     public static function plus(): Closure
@@ -61,17 +61,17 @@ final class Numeral
 
     public static function pred(): Closure
     {
-        return static fn (callable $a): Closure => static fn (callable $b): Closure => static fn ($c) => $a(static fn ($d): Closure => static fn ($e) => $e($d($b)))(static fn () => $c)(Combinators::I());
+        return static fn (callable $a): Closure => static fn (callable $b): Closure => static fn ($c) => $a(static fn (callable $d): Closure => static fn (callable $e) => $e($d($b)))(static fn () => $c)(Combinators::I());
     }
 
     public static function seven(): Closure
     {
-        return self::plus()(self::one())(self::six());
+        return self::succ()(self::six());
     }
 
     public static function six(): Closure
     {
-        return self::plus()(self::one())(self::five());
+        return self::succ()(self::five());
     }
 
     public static function succ(): Closure
@@ -81,7 +81,7 @@ final class Numeral
 
     public static function three(): Closure
     {
-        return self::plus()(self::one())(self::two());
+        return self::succ()(self::two());
     }
 
     public static function toInt(callable $numeral): int
@@ -91,18 +91,18 @@ final class Numeral
 
     public static function toNumeral(int $n): Closure
     {
-        return 0 === $n - 1 ?
-            Numeral::one() :
-            Numeral::plus()(Numeral::one())(Numeral::toNumeral($n - 1));
+        return 0 === $n ?
+            Numeral::zero() :
+            Numeral::succ()(Numeral::toNumeral($n - 1));
     }
 
     public static function two(): Closure
     {
-        return self::plus()(self::one())(self::one());
+        return self::succ()(self::one());
     }
 
     public static function zero(): Closure
     {
-        return static fn (callable $s): Closure => Combinators::I();
+        return static fn (): Closure => Combinators::I();
     }
 }
