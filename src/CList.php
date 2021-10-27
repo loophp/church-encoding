@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * For the full copyright and license information, please view
+ * the LICENSE file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 namespace loophp\churchencoding;
@@ -24,6 +29,9 @@ final class CList
         return static fn (callable $a): Closure => static fn (callable $b): Closure => Pair::of()(Boolean::CFalse())(Pair::of()($a)($b));
     }
 
+    /**
+     * @return mixed
+     */
     public static function foldl()
     {
         return static fn (callable $f): Closure => static fn ($a): Closure => static fn (callable $xs) => self::foldr()(
@@ -31,6 +39,9 @@ final class CList
         )(Combinators::I())($xs)($a);
     }
 
+    /**
+     * @return mixed
+     */
     public static function foldr()
     {
         return Combinators::Y()(
