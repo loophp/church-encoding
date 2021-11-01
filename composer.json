@@ -25,7 +25,7 @@
         "infection/infection": "^0.24",
         "infection/phpspec-adapter": "^0.1.1",
         "phpspec/phpspec": "^7",
-        "phpstan/phpstan-strict-rules": "^0.12",
+        "phpstan/phpstan-strict-rules": "^0.12 || ^1.0",
         "symfony/var-dumper": "^5.1"
     },
     "config": {
