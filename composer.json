@@ -1,14 +1,14 @@
 {
     "name": "loophp/church-encoding",
-    "type": "library",
     "description": "Church encoding in PHP",
+    "license": "MIT",
+    "type": "library",
     "keywords": [
         "church-encoding",
         "educational",
         "functional-programming",
         "learning"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Pol Dellaiera",
@@ -28,13 +28,19 @@
         "phpstan/phpstan-strict-rules": "^0.12",
         "symfony/var-dumper": "^5.1"
     },
-    "config": {
-        "sort-packages": true
-    },
     "autoload": {
         "psr-4": {
             "loophp\\churchencoding\\": "./src/"
         }
+    },
+    "config": {
+        "allow-plugins": {
+            "infection/extension-installer": true,
+            "phpstan/extension-installer": true,
+            "phpro/grumphp": true,
+            "ergebnis/composer-normalize": true
+        },
+        "sort-packages": true
     },
     "scripts": {
         "bench": "vendor/bin/phpbench run --report='generator: \"table\", cols: [ \"suite\", \"subject\", \"mean\", \"diff\", \"mem_peak\", \"mem_real\"], break: [\"benchmark\"]'",
