@@ -22,7 +22,7 @@
     "require-dev": {
         "drupol/php-conventions": "^6",
         "friends-of-phpspec/phpspec-code-coverage": "^6.1",
-        "infection/infection": "^0.29",
+        "infection/infection": "^0.31",
         "infection/phpspec-adapter": "^0.2.0",
         "phpspec/phpspec": "^7",
         "phpstan/phpstan-strict-rules": "^1.0",
